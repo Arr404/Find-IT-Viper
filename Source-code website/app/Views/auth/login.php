@@ -1,72 +1,69 @@
 <?= $this->extend('auth/auth/_layout') ?>
 <?= $this->section('content') ?>
-
-<div class="hold-transition login-page">
-  <div class="login-box">
-    <!-- /.login-logo -->
-    <div class="card card-outline card-primary">
-      <div class="card-header text-center">
-        <a href="#" class="h1"><b>Admin</b>LTE</a>
-      </div>
-      <div class="card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
-
-        <form action="<?= base_url('AuthController/login') ?>" method="post">
-          <div class="input-group mb-3">
-            <input type="text" name="input" class="form-control" placeholder="Email / Username">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
-              </div>
-            </div>
-          </div>
-          <div class="input-group mb-3">
-            <input type="password" name="password" class="form-control" placeholder="Password">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-8">
-              <div class="icheck-primary">
-                <input type="checkbox" id="remember">
-                <label for="remember">
-                  Remember Me
-                </label>
-              </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-            </div>
-            <!-- /.col -->
-          </div>
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+      <form action="<?= base_url('AuthController/login') ?>" method="post">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" name="input" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" name="password" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="/forgot-password">Forgot Password?</a>
+				</div>
         </form>
+			</div>
 
-        <div class="social-auth-links text-center mt-2 mb-3">
-          <a href="#" class="btn btn-block btn-primary">
-            <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-          </a>
-          <a href="#" class="btn btn-block btn-danger">
-            <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-          </a>
-        </div>
-        <!-- /.social-auth-links -->
-
-        <p class="mb-1">
-          <a href="/forgot-password">I forgot my password</a>
-        </p>
-        <p class="mb-0">
-          <a href="/register" class="text-center">Register a new membership</a>
-        </p>
-      </div>
-      <!-- /.card-body -->
-    </div>
-    <!-- /.card -->
-  </div>
+			<div class="sign-up-htm">
+      <form action="<?= base_url('AuthController/register') ?>" method="post">
+      <div class="group">
+					<label for="fullname"  class="label">Fullname</label>
+					<input id="fullname" name="fullname" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" name="username" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" name="password" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" name="confpassword" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="email" class="label">Email Address</label>
+					<input id="email"  name="email"  type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign Up">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<label for="tab-1">Already Member?</a>
+				</div>
+        </form>
+			</div>
+		</div>
+	</div>
 </div>
+
 <?php if (session()->getFlashdata('msg')) : ?>
   <?= session()->getFlashdata('msg') ?>
 <?php endif; ?>

@@ -57,25 +57,25 @@ class AuthController extends TamhorAuth
                         "You've been Registered. Check your email for activation.",
                         "This page will be automatically redirect to login page."
                     ));
-                    return redirect()->to('/register');
+                    return redirect()->to('/login');
                 } else {
                     $this->session->setFlashdata('msg', $this->errors(
                         "You've been Registered. <br/> But cant send you activation email right now.",
                         "Contact the administrator."
                     ));
-                    return redirect()->to('/register');
+                    return redirect()->to('/login');
                 }
             } else {
                 $this->session->setFlashdata('msg', $this->errors(
                     "You cannot to register right now.",
                     "Contact the administrator.</p></div>"
                 ));
-                return redirect()->to('/register');
+                return redirect()->to('/login');
             }
         } else {
 
             $this->session->setFlashdata('msg', $this->validator->listErrors());
-            return redirect()->to('/register');
+            return redirect()->to('/login');
         }
     }
 

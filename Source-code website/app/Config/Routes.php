@@ -56,7 +56,8 @@ $routes->get('/forgot-password', function () {
 // 	return view('dashboard/dashboard');
 // }
 // );
-
+$routes->get('/data', 'home::index');
+$routes->resource('employee');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

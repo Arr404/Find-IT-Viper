@@ -47,7 +47,13 @@ class Home extends BaseController
 
 		echo json_encode($output);
 	}
+	public function get_data_konsentrasi(){
+		$id = $this->session->get('id');
+		$data_income = $this->DashboardModel->get_data_konsentrasi($id, $this->request->getVar('tahun'),$this->request->getVar('month'),$this->request->getVar('week'));
+		$output = $data_income;
 
+		echo json_encode($output);
+	}
 	//--------------------------------------------------------------------
 
 }

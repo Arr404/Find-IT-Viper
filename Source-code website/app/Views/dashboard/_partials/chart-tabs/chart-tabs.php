@@ -17,7 +17,22 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    
+                <form class="form-inline">
+                        <!--tahun-->
+                        <div class="form-group mb-2">
+                            <!-- <label class="ml-3">Tahun : </label> -->
+                            <select name="tahun" class="form-control ml-2" id="tahun_income">
+                                <option disabled selected>--Pilih Tahun--</option>
+                                <?php
+                                for ($i = 2019; $i < 2023; $i++) { ?>
+                                    <option value="<?php echo $i+1 ?>"><?php echo $i+1 ?></option>
+                                <?php } ?>
+                            </select>
+                            
+                        </div>
+
+                        <button id="submit_data_income" type="button" class="btn btn-primary mb-2 ml-4"><i class="fas fa-eye"></i> Tampilkan Data</button>
+                    </form>
                     <div class="card-body">
                         <div class="chart-container" style="position: relative; height:40vh;">
                             <canvas id="barChart"></canvas>
@@ -89,8 +104,8 @@
             document.getElementById('barChart'),
             configBar
         );
-        $('#btn_tampil').click(function() {
-            var tahun = $('#tahun').val();
+        $('#submit_data_income').click(function() {
+            var tahun = $('#tahun_income').val();
             $.ajax({
                 url: "<?php echo base_url(); ?>/Home/get_data_income",
                 method: "POST",

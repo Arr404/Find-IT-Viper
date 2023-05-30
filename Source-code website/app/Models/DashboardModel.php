@@ -16,8 +16,21 @@ Class DashboardModel extends Model
         $db      = \Config\Database::connect();
         $builder = $db->table('income_user');
         $builder->select('*');
-        $builder->where(['user_id' => $sesi]);
         $builder->where(['tahun' => $tahun]);
+        $result   = $builder->get()->getResult();
+		return $result;
+	}
+    public function get_data_konsentrasi($sesi, $tahun, $month, $week) {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('data_uji');
+        $builder->select('*');
+        $builder->where(['tahun' => $tahun]);
+        if($month != null){
+            $builder->where(['bulan' => $month]);
+        }
+        if($week != null){
+            $builder->where(['minggu' => $week]);
+        }
         $result   = $builder->get()->getResult();
 		return $result;
 	}

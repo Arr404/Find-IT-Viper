@@ -150,7 +150,7 @@
         
         function update_barChartNox_realisasi(chart, tahun, data) {
             console.log(data)
-            data = arr.slice(Math.max(data.length - 5, 1))
+            data = arr.slice(Math.max(data.length - 30, 1))
             let times = []
             data.forEach(item=>{
                 times.push(item.time);

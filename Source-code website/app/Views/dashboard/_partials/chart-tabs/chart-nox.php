@@ -149,8 +149,8 @@
         
         
         function update_barChartNox_realisasi(chart, tahun, data) {
-            console.log(data)
-            data = data.slice(Math.max(data.length - 30, 1))
+            
+            data = data.slice(Math.max(data.length - 20, 1))
             let times = []
             data.forEach(item=>{
                 times.push(item.time);
@@ -167,6 +167,9 @@
             data.forEach(item=>{
                 CoxKonsentrasi.push(item.Cox_Konsentrasi);
             })
+            console.log("Mox: ",MoxKonsentrasi)
+            console.log("Nox: ",NoxKonsentrasi)
+            console.log("Cox: ",CoxKonsentrasi)
             const data_bar = {
                 labels: times,
                 datasets: [{

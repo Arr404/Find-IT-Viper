@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <div class="card-body">
                         <div class="chart-container" style="position: relative; height:40vh;">
-                            <img src="https://cdn.discordapp.com/attachments/815944558948909076/1107310361335574698/image.png" alt="vio" style="position: relative; height:43vh;">
+                            <img src="https://cdn.discordapp.com/attachments/815944558948909076/1128691628501118976/Group_9.png" alt="vio" style="position: relative; height:43vh;">
                         </div>
                     </div>
                 </div>

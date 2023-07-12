@@ -18,7 +18,7 @@
                 <?= $this->include('dashboard/_partials/chart-tabs/chart-tabs-daily') ?>
             </section>
 
-            <section class="col-lg-6 connectedSortable">
+            <section class="col-lg-12 connectedSortable">
                 <?= $this->include('dashboard/_partials/chart-tabs/chart-nox') ?>
             </section>
 
